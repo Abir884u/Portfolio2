@@ -24,7 +24,7 @@ export default function Hero() {
 
   return (
     <>
-      {/* Navbar */}
+     
      <nav className={`w-full py-2 ${scrolled ? 'bg-transparent' : 'bg-transparent'}`}>
   <div className="max-w-6xl mx-auto px-4">
 
@@ -51,7 +51,7 @@ export default function Hero() {
 
 
 
-      {/* Hero Section */}
+      
       <section id="home" className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
@@ -66,7 +66,7 @@ export default function Hero() {
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold leading-tight bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Istiak Uddin
+              Istiak Abir
             </h1>
             
             <p className="text-2xl text-blue-200 font-light">Web & Mobile App Engineer</p>
@@ -135,7 +135,7 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* CV Modal */}
+     
       {showCVModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] px-4">
           <div className="bg-slate-800 rounded-2xl p-8 max-w-md w-full border border-slate-700 shadow-2xl">
