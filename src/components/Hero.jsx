@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin,  Download, Eye, Home,  FolderOpen, MessageSquare, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Download, Eye, Home, FolderOpen, MessageSquare, Menu, X } from 'lucide-react';
 
 export default function Hero() {
   const [showCVModal, setShowCVModal] = useState(false);
@@ -25,47 +25,43 @@ export default function Hero() {
   return (
     <>
      
-     <nav className={`w-full py-2 ${scrolled ? 'bg-transparent' : 'bg-transparent'}`}>
-  <div className="max-w-6xl mx-auto px-4">
+      <nav className={`w-full ${scrolled ? 'bg-transparent' : 'bg-transparent'}`}>
+        <div className="max-w-8xl mx-auto px-4">
+          <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center gap-4 px-4 py-2 bg-slate-900/80 backdrop-blur-md rounded-full shadow-4xl z-50">
+            
+            <button onClick={() => scrollToSection('home')} className="flex items-center gap-4 text-gray-200 hover:text-blue-400 transition-colors">
+              <Home size={23} />
+              <span></span>
+            </button>
 
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center gap-3 px-4 py-2 bg-slate-900/80 backdrop-blur-md rounded-full shadow-2xl z-50">
-      
-      <button onClick={() => scrollToSection('home')} className="flex items-center gap-1 text-gray-200 hover:text-blue-400 transition-colors">
-        <Home size={18} />
-        <span>Home</span>
-      </button>
+            <button onClick={() => scrollToSection('projects')} className="flex items-center gap-4 text-gray-200 hover:text-blue-400 transition-colors">
+              <FolderOpen size={23} />
+              <span></span>
+            </button>
 
-      <button onClick={() => scrollToSection('projects')} className="flex items-center gap-1 text-gray-200 hover:text-blue-400 transition-colors">
-        <FolderOpen size={18} />
-        <span>Projects</span>
-      </button>
+            <button onClick={() => scrollToSection('contact')} className="flex items-center gap-4 text-gray-200 hover:text-blue-400 transition-colors">
+              <MessageSquare size={23} />
+              <span></span>
+            </button>
 
-      <button onClick={() => scrollToSection('contact')} className="flex items-center gap-1 text-gray-200 hover:text-blue-400 transition-colors">
-        <MessageSquare size={18} />
-        <span>Contact</span>
-      </button>
+          </div>
+        </div>
+      </nav>
 
-    </div>
-  </div>
-</nav>
-
-
-
-      
-      <section id="home" className="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
+      <section id="home" className="min-h-screen bg-[linear-gradient(135deg,_#286594_0%,_#082647_100%)] flex items-center justify-center px-4 py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-20 w-72 h-72 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-400/30">
+            <div className="inline-flex items-center gap-2 bg-white-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-400/30">
               <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
               <span className="text-sm">Hello, I'm</span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight slate-200 opacity: 1; transform: none">
               Istiak Abir
             </h1>
             
@@ -99,43 +95,49 @@ export default function Hero() {
           
           <div className="relative">
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-2xl transform hover:scale-105 transition-all duration-300">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                <span className="text-xs text-gray-400 ml-2">developerProfile.js</span>
-              </div>
-              <pre className="text-xs md:text-sm text-green-400 font-mono overflow-x-auto">
-{`const aboutMe = {
-  name: "Istiak Abir",
-  role: "Full Stack Developer",
-  skills: [
-    "JavaScript","C","C++","Java",
-    "HTML","CSS","TailwindCSS",
-    "React.js","Node.js","Express.js"
-  ],
+              
+              <pre className="text-[11px] text-orange-300 overflow-x-auto">
+<span style={{color: 'rgb(86, 156, 214)'}}>const</span>{` aboutMe: `}<span style={{color: 'rgb(78, 201, 176)'}}>DeveloperProfile</span>{` = {
+  codename: "Istiak Abir",
+  role: "Web and Mobile App Developer",
+  experience: "3+ years, 10+ projects",
+  stack: {
+    languages: ["JavaScript", "TypeScript", "C++"],
+    frameworks: ["React", "Next.js", "React Native", "Appwrite", "NodeJS"],
+    libraries: ["TailwindCSS", "Shadcn", "Redux", "Socket.io"],
+  },
   tools: [
-    "Git", "Docker", "AWS"
+    "Git", "VSCode", "Chrome DevTools", "Render", "Netlify",
+    "Firebase", "CodeBlocks", "Jira", "ChatGPT", "Figma"
   ],
-  passion: [
-    "Clean code and best practices",
-    "UI/UX design",
-    "SQA and Testing"
+  whatIDo: [
+    "Create fast, responsive apps using React, Next.js, and React Native.",
+    "Turn complex ideas into user-friendly, performant, and secure apps.",
+    "Write clean, reusable, scalable code.",
+  ],
+  keyAchievements: [
+    "Delivered 10+ projects with API integration and authentication.",
+    "Improved app performance and load times significantly."
+  ],
+  softSkills: [
+    "Clear communicator and team collaborator",
+    "Fast learner, adaptable and solutions-focused mindset"
   ]
 };`}
               </pre>
-              <div className="mt-4 flex items-center justify-end gap-2 text-xs text-gray-400">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                <span>Available for hire</span>
+              
+              <div className="floating-card transform-gpu">
+                <div className="card-content">
+                  <span className="card-icon">👩🏻‍💻</span>
+                  <span className="card-text">Available for hire</span>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
       </section>
 
-     
       {showCVModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] px-4">
           <div className="bg-slate-800 rounded-2xl p-8 max-w-md w-full border border-slate-700 shadow-2xl">

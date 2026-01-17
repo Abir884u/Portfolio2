@@ -3,27 +3,27 @@ import React from 'react';
 export default function Projects() {
   const projects = [
     {
-      title: "Running Obstacle Game",
-      description: "Interactive browser-based running game with obstacles and score tracking.",
-      image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-      tags: ["React.js", "TypeScript", "TailwindCSS"]
+      title: "Klobostha: Your Ultimate Price Comparison Platform",
+      description: "Klobostha is an online platform dedicated to helping people in Bangladesh find the best products at competitive prices. The platform offers detailed price comparisons, comprehensive product information, and reliable user reviews to assist users in making informed shopping decisions.",
+      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop",
+      tags: ["React.js", "Node.js", "MongoDB"]
     },
     {
-      title: "Real Estate App",
-      description: "Property listing platform with search filters, virtual tours, and agent connectivity.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-      tags: ["ReactNative", "Appwrite", "TailwindCSS"]
+      title: "IntrLab: Digital It Agency in Europe",
+      description: "An end-to-end digital solutions, from stunning designs and seamless development to scalable cloud and DevOps services. Our goal is to deliver fast, powerful, secure, and cost-effective technology.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+      tags: ["React.js", "Node.js", "TailwindCSS"]
     },
     {
-      title: "Weather Web App",
-      description: "Real-time weather application with location search, forecasts, and interactive maps.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+       title: "Ride-Sharing App",
+      description: "A ride-sharing app is a mobile platform that connects passengers with nearby drivers using their personal vehicles. It offers a convenient and cost-effective alternative way to book rides on demand, utilizing GPS and real-time data for efficient matching and navigation.",
+      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=500&fit=crop",
       tags: ["React Native", "TypeScript", "TailwindCSS"]
     }
   ];
 
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-20 bg-[#0f1729] px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           My Projects
