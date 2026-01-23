@@ -52,7 +52,7 @@ export default function Hero() {
         ease: "easeOut",
         delay: 0.3
       }}
-      className="fixed bottom-0.5   left-1/2 -translate-x-1/2 flex items-center justify-center gap-4 px-4 py-2 bg-slate-900/80 backdrop-blur-md rounded-full shadow-4xl z-50"
+      className="fixed bottom-0.5 -ml-24 left-1/2 -translate-x-1/2 flex items-center justify-center gap-4 px-4 py-2 bg-slate-900/80 backdrop-blur-md rounded-full shadow-4xl z-50"
     >
       
       <motion.button
@@ -62,7 +62,7 @@ export default function Hero() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => scrollToSection('home')} 
-        className="flex items-center gap-4 text-gray-200 hover:text-blue-400 transition-colors p-2"
+        className="flex items-center  gap-4 text-gray-200 hover:text-blue-400 transition-colors p-2"
       >
         <Home size={23} />
       </motion.button>
@@ -173,7 +173,7 @@ export default function Hero() {
 >
   
 
-  <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border  border-slate-700 shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
+  <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-5 -mt-8 border  border-slate-700 shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
      <pre className="text-[10px] text-orange-300  overflow-x-auto">
 <span style={{color: 'rgb(86, 156, 214)'}}>const</span>{` aboutMe: `}<span style={{color: 'rgb(78, 201, 176)'}}>DeveloperProfile</span>{` = {
   codename: "Istiak Abir",
@@ -207,22 +207,9 @@ export default function Hero() {
   <motion.div
     initial={{ opacity: 1, y: 8 }}
     animate={{
-      opacity: 1,
-      y: [0, -10, 0],
+       y: [0, -10, 0], rotate: [0, 2, 0],
     }}
-    transition={{
-      opacity: { 
-        duration: 0.5,
-        delay: 1.5 // Relative container আসার পর
-      },
-      y: {
-        duration: 6,
-        delay: 2, // আরো পরে শুরু
-        repeat: Infinity,
-        repeatType: "loop",
-        ease: "easeInOut",
-      }
-    }}
+     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
     className="absolute h-12 -bottom-4 -right-4 flex items-center gap-2 bg-white/10 backdrop-blur px-3 py-1 text-xs border border-white/10 rounded-2xl"
   >
     <div className='text-xl'>👩🏻‍💻</div> 
