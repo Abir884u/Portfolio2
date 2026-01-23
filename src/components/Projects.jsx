@@ -25,7 +25,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-[#0f1729] px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl text-white font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           My Projects
         </h2>
         

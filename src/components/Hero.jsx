@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Download, Eye, Home, FolderOpen, MessageSquare, Menu, X } from 'lucide-react';
 
+import { motion } from "framer-motion";
+
 export default function Hero() {
   const [showCVModal, setShowCVModal] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -25,28 +27,74 @@ export default function Hero() {
   return (
     <>
      
-      <nav className={`w-full ${scrolled ? 'bg-transparent' : 'bg-transparent'}`}>
-        <div className="max-w-8xl mx-auto px-4">
-          <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center gap-4 px-4 py-2 bg-slate-900/80 backdrop-blur-md rounded-full shadow-4xl z-50">
-            
-            <button onClick={() => scrollToSection('home')} className="flex items-center gap-4 text-gray-200 hover:text-blue-400 transition-colors">
-              <Home size={23} />
-              <span></span>
-            </button>
+  <motion.nav
+  initial={{ 
+    y: "80%", 
+    opacity: 1  
+  }}
+  animate={{ 
+    y: 0,     
+    opacity: 1 
+  }}
+  transition={{ 
+    duration: 0.8,
+    ease: "easeOut",
+    delay: 0.3
+  }}
+  className={`w-full ${scrolled ? 'bg-transparent' : 'bg-transparent'}`}
+>
+  <div className="max-w-8xl mx-auto px-4">
+    <motion.div
+      initial={{ y: 100, opacity: 1 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ 
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.3
+      }}
+      className="fixed bottom-0.5   left-1/2 -translate-x-1/2 flex items-center justify-center gap-4 px-4 py-2 bg-slate-900/80 backdrop-blur-md rounded-full shadow-4xl z-50"
+    >
+      
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.8, duration: 0.3 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => scrollToSection('home')} 
+        className="flex items-center gap-4 text-gray-200 hover:text-blue-400 transition-colors p-2"
+      >
+        <Home size={23} />
+      </motion.button>
 
-            <button onClick={() => scrollToSection('projects')} className="flex items-center gap-4 text-gray-200 hover:text-blue-400 transition-colors">
-              <FolderOpen size={23} />
-              <span></span>
-            </button>
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.9, duration: 0.3 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => scrollToSection('projects')} 
+        className="flex items-center gap-4 text-gray-200 hover:text-blue-400 transition-colors p-2"
+      >
+        <FolderOpen size={23} />
+      </motion.button>
 
-            <button onClick={() => scrollToSection('contact')} className="flex items-center gap-4 text-gray-200 hover:text-blue-400 transition-colors">
-              <MessageSquare size={23} />
-              <span></span>
-            </button>
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.0, duration: 0.3 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => scrollToSection('contact')} 
+        className="flex items-center gap-4 text-gray-200 hover:text-blue-400 transition-colors p-2"
+      >
+        <MessageSquare size={23} />
+      </motion.button>
 
-          </div>
-        </div>
-      </nav>
+    </motion.div>
+  </div>
+</motion.nav>
+
 
       <section id="home" className="min-h-screen bg-[linear-gradient(135deg,_#286594_0%,_#082647_100%)] flex items-center justify-center px-4 py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -67,11 +115,26 @@ export default function Hero() {
             
             <p className="text-2xl text-blue-200 font-light">Web & Mobile App Engineer</p>
             
-            <p className="text-gray-300 leading-relaxed text-lg">
-              Passionate Full Stack Developer with expertise in modern web technologies.
-               I build scalable applications and solve complex problems with clean, 
-               efficient code.
-            </p>
+            <motion.p
+  initial={{ 
+    y: 10,      
+    opacity: 0  
+  }}
+  animate={{ 
+    y: 0,        
+    opacity: 1
+  }}
+  transition={{ 
+    duration: 0.8,
+    ease: "easeOut",
+    delay: 0.3    
+  }}
+  className="text-gray-300 leading-relaxed text-lg"
+>
+  Passionate Full Stack Developer with expertise in modern web technologies.
+  I build scalable applications and solve complex problems with clean,
+  efficient code.
+</motion.p>
             
             <div className="flex gap-4 pt-4">
               <button onClick={() => setShowCVModal(true)} className="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg flex items-center gap-2">
@@ -92,11 +155,26 @@ export default function Hero() {
               </a>
             </div>
           </div>
-          
-          <div className="relative">
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 shadow-2xl transform hover:scale-105 transition-all duration-300">
-              
-              <pre className="text-[11px] text-orange-300 overflow-x-auto">
+          <motion.div
+  initial={{ 
+    opacity: 0,
+    x: 100,  
+  }}
+  animate={{ 
+    opacity: 1,
+    x: 0,    
+  }}
+  transition={{ 
+    duration: 1,
+    ease: "easeOut",
+    delay: 0.3 
+  }}
+  className="relative"
+>
+  
+
+  <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border  border-slate-700 shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
+     <pre className="text-[10px] text-orange-300  overflow-x-auto">
 <span style={{color: 'rgb(86, 156, 214)'}}>const</span>{` aboutMe: `}<span style={{color: 'rgb(78, 201, 176)'}}>DeveloperProfile</span>{` = {
   codename: "Istiak Abir",
   role: "Web and Mobile App Developer",
@@ -124,17 +202,36 @@ export default function Hero() {
     "Fast learner, adaptable and solutions-focused mindset"
   ]
 };`}
-              </pre>
-              
-              <div className="floating-card transform-gpu">
-                <div className="card-content">
-                  <span className="card-icon">👩🏻‍💻</span>
-                  <span className="card-text">Available for hire</span>
-                </div>
-              </div>
+    </pre>
+  </div>
+  <motion.div
+    initial={{ opacity: 1, y: 8 }}
+    animate={{
+      opacity: 1,
+      y: [0, -10, 0],
+    }}
+    transition={{
+      opacity: { 
+        duration: 0.5,
+        delay: 1.5 // Relative container আসার পর
+      },
+      y: {
+        duration: 6,
+        delay: 2, // আরো পরে শুরু
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut",
+      }
+    }}
+    className="absolute h-12 -bottom-4 -right-4 flex items-center gap-2 bg-white/10 backdrop-blur px-3 py-1 text-xs border border-white/10 rounded-2xl"
+  >
+    <div className='text-xl'>👩🏻‍💻</div> 
+    <span className='font-bold'>Available for hire</span>
+  </motion.div>
+</motion.div>
+  
 
-            </div>
-          </div>
+          
         </div>
       </section>
 
